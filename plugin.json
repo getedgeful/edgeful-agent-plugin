@@ -1,0 +1,14 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "edgeful",
+  "version": "0.1.0",
+  "description": "Query edgeful's futures and stock trading reports (gap fills, session ranges, ORB, discovery scans) directly from your AI agent.",
+  "author": {
+    "name": "edgeful",
+    "url": "https://www.edgeful.com"
+  },
+  "homepage": "https://docs.edgeful.com/getting-started/set-up-mcp",
+  "repository": "https://github.com/edgeful/edgeful-agent-plugin",
+  "license": "MIT",
+  "keywords": ["trading", "futures", "stocks", "market-data", "backtesting", "mcp"]
+}
