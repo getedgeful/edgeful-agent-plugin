@@ -13,7 +13,7 @@ Once published: search for **edgeful** in the Cursor marketplace and click **Add
 ### Local install (before publishing / for development)
 
 ```bash
-git clone https://github.com/edgeful/edgeful-agent-plugin
+git clone https://github.com/getedgeful/edgeful-agent-plugin
 cp -r edgeful-agent-plugin ~/.cursor/plugins/local/edgeful
 ```
 
