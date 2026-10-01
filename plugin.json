@@ -8,7 +8,7 @@
     "url": "https://www.edgeful.com"
   },
   "homepage": "https://docs.edgeful.com/getting-started/set-up-mcp",
-  "repository": "https://github.com/edgeful/edgeful-agent-plugin",
+  "repository": "https://github.com/getedgeful/edgeful-agent-plugin",
   "license": "MIT",
   "keywords": ["trading", "futures", "stocks", "market-data", "backtesting", "mcp"]
 }
