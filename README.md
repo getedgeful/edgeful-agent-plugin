@@ -6,30 +6,36 @@ Authentication is OAuth: on first use, your client opens an edgeful sign-in and 
 
 Ships two manifests side by side: the portable [Agent Plugins](https://agent-plugins.org) format for Cursor and any other client that supports the standard, and a [Claude plugin](https://claude.com/docs/plugins/build) manifest read by claude.ai, the Claude desktop app, Cowork, and Claude Code. Both point at the same MCP server.
 
-## Install in Cursor
+## What this plugin does
 
-Once published: search for **edgeful** in the Cursor marketplace and click **Add to Cursor**.
+The plugin contains no hooks, scripts or local code. It only declares the edgeful MCP server URL (`https://api.edgeful.com/mcp`). All requests go to that server after you sign in with edgeful, and the plugin sends no data anywhere else.
 
-### Local install (before publishing / for development)
+## Install
+
+### Claude
+
+Once published: open **Customize > Plugins** in claude.ai or the Claude desktop app and add **edgeful**. Connect the edgeful server from the plugin's **Connectors** tab and sign in with your edgeful account. It's then also available in Cowork and Claude Code.
+
+### Cursor
+
+Once published: search for **edgeful** in the Cursor marketplace and click **Add to Cursor**. When Cursor asks you to authenticate, sign in and click **Allow**.
+
+## Try it
+
+- "what are the top reports for ES right now?"
+- "how often does NQ fill its opening gap on Mondays over the last 6 months?"
+
+## Local development
+
+### Claude
+
+claude.ai and the desktop app: build a zip from the repo with
 
 ```bash
-git clone https://github.com/getedgeful/edgeful-agent-plugin
-cp -r edgeful-agent-plugin ~/.cursor/plugins/local/edgeful
+git archive -o edgeful.zip HEAD
 ```
 
-Copy, don't symlink: Cursor rejects local plugins whose symlink target lives outside `~/.cursor/plugins/local` (visible in the "Cursor Plugins" output log as `loadUserLocalPlugin ... rejected`). Re-copy after editing.
-
-Restart Cursor (or run **Developer: Reload Window**), open **Customize** and confirm the `edgeful` plugin and its MCP server are listed. Cursor flags the server as needing authentication; click through, sign in with your edgeful account, and click **Allow**.
-
-To test against a non-production API, change `url` in `mcp.json`.
-
-## Install in Claude
-
-Once published: open **Customize > Plugins** in claude.ai or the Claude desktop app and add **edgeful**. The plugin's **Connectors** tab lists the edgeful MCP server; connect it and sign in with your edgeful account. A plugin added there is also available in Cowork and in Claude Code.
-
-### Local install (before publishing / for development)
-
-claude.ai and the desktop app: zip the repo folder, then go to **Customize > Plugins > Add > Upload plugin** and select the zip. Connect the server from the plugin's **Connectors** tab.
+then go to **Customize > Plugins > Add > Upload plugin** and select `edgeful.zip`. `git archive` only includes committed files, so `.git` and `.DS_Store` stay out of the zip. Connect the server from the plugin's **Connectors** tab.
 
 Claude Code:
 
@@ -42,10 +48,18 @@ Run `/mcp` inside the session and confirm `plugin:edgeful:edgeful` is listed. Th
 
 To check the manifest after editing, run `claude plugin validate ./edgeful-agent-plugin`.
 
-## Try it
+### Cursor
 
-- "what are the top reports for ES right now?"
-- "how often does NQ fill its opening gap on Mondays over the last 6 months?"
+```bash
+git clone https://github.com/getedgeful/edgeful-agent-plugin
+cp -r edgeful-agent-plugin ~/.cursor/plugins/local/edgeful
+```
+
+Copy, don't symlink: Cursor rejects local plugins whose symlink target lives outside `~/.cursor/plugins/local` (visible in the "Cursor Plugins" output log as `loadUserLocalPlugin ... rejected`). Re-copy after editing.
+
+Restart Cursor (or run **Developer: Reload Window**), open **Customize** and confirm the `edgeful` plugin and its MCP server are listed. Cursor flags the server as needing authentication; click through, sign in with your edgeful account, and click **Allow**.
+
+To test against a non-production API, change `url` in `mcp.json`.
 
 ## Files
 
@@ -53,6 +67,8 @@ To check the manifest after editing, run `claude plugin validate ./edgeful-agent
 - `mcp.json` - Cursor MCP server declaration
 - `.claude-plugin/plugin.json` - Claude plugin manifest
 - `.mcp.json` - Claude MCP server declaration
+- `README.md` - this file; also the plugin's listing description on claude.ai
+- `LICENSE` - MIT license text
 
 ## License
 
