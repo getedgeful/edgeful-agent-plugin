@@ -29,7 +29,7 @@ Once published: search for **edgeful** in the Cursor marketplace and click **Add
 
 ### Claude
 
-claude.ai and the desktop app: build a zip from the repo with
+claude.ai and the desktop app: from the repo root, build a zip with
 
 ```bash
 git archive -o edgeful.zip HEAD
@@ -47,6 +47,8 @@ claude --plugin-dir ./edgeful-agent-plugin
 Run `/mcp` inside the session and confirm `plugin:edgeful:edgeful` is listed. The first tool call opens the edgeful sign-in and consent screen.
 
 To check the manifest after editing, run `claude plugin validate ./edgeful-agent-plugin`.
+
+To test against a non-production API, change `url` in `.mcp.json`.
 
 ### Cursor
 
@@ -67,7 +69,7 @@ To test against a non-production API, change `url` in `mcp.json`.
 - `mcp.json` - Cursor MCP server declaration
 - `.claude-plugin/plugin.json` - Claude plugin manifest
 - `.mcp.json` - Claude MCP server declaration
-- `README.md` - this file; also the plugin's listing description on claude.ai
+- `README.md` - this file
 - `LICENSE` - MIT license text
 
 ## License
