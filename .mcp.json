@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "edgeful": {
+      "type": "http",
+      "url": "https://api.edgeful.com/mcp"
+    }
+  }
+}
