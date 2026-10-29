@@ -2,7 +2,7 @@
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "edgeful",
   "version": "0.1.0",
-  "description": "Query edgeful's futures and stock trading reports (gap fills, session ranges, ORB, discovery scans) directly from your AI agent.",
+  "description": "Query edgeful's futures and stock trading reports and discovery scans, build and save custom reports, and manage your edgeful settings, watchlists and templates from your AI agent.",
   "author": {
     "name": "edgeful",
     "url": "https://www.edgeful.com"
