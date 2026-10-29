@@ -112,6 +112,7 @@ To test against a non-production API, change `url` in `mcp.json`.
 - `mcp.json` - Cursor MCP server declaration
 - `.claude-plugin/plugin.json` - Claude plugin manifest
 - `.mcp.json` - Claude MCP server declaration
+- `assets/logo.png` - plugin icon (512 x 512 PNG), used for the Claude directory listing
 - `README.md` - this file
 - `LICENSE` - MIT license text
 
