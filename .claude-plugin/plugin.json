@@ -11,5 +11,6 @@
   "repository": "https://github.com/getedgeful/edgeful-agent-plugin",
   "license": "MIT",
   "icon": "./assets/logo.png",
+  "privacyPolicyUrl": "https://www.edgeful.com/privacy-policy",
   "keywords": ["trading", "futures", "stocks", "market-data", "backtesting", "mcp"]
 }
