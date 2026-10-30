@@ -1,0 +1,14 @@
+{
+  "name": "edgeful",
+  "version": "0.1.0",
+  "description": "Query edgeful's futures and stock trading reports and discovery scans, build and save custom reports, and manage your edgeful settings, watchlists and templates from your AI agent.",
+  "author": {
+    "name": "edgeful",
+    "url": "https://www.edgeful.com"
+  },
+  "homepage": "https://www.edgeful.com/docs/getting-started/set-up-mcp",
+  "repository": "https://github.com/getedgeful/edgeful-agent-plugin",
+  "license": "MIT",
+  "logo": "assets/logo.png",
+  "keywords": ["trading", "futures", "stocks", "market-data", "backtesting", "mcp"]
+}
