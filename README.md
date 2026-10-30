@@ -4,7 +4,7 @@ Connects your AI agent to the edgeful MCP server (`https://api.edgeful.com/mcp`)
 
 Authentication is OAuth: on first use, your client opens an edgeful sign-in and consent screen. No API key is needed. Tool calls require an edgeful account with an API-enabled plan (Essential, Pro, or All Access).
 
-Ships two manifests side by side: the portable [Agent Plugins](https://agent-plugins.org) format for Cursor and any other client that supports the standard, and a [Claude plugin](https://claude.com/docs/plugins/build) manifest read by claude.ai, the Claude desktop app, Cowork, and Claude Code. Both point at the same MCP server.
+Ships three manifests side by side: the portable [Agent Plugins](https://agent-plugins.org) format for any client that supports the standard, a [Cursor plugin](https://cursor.com/docs/reference/plugins) manifest that Cursor reads instead because it carries the logo, and a [Claude plugin](https://claude.com/docs/plugins/build) manifest read by claude.ai, the Claude desktop app, Cowork, and Claude Code. All three point at the same MCP server. Keep their name, version, description and links the same when editing any of them.
 
 ## What this plugin does
 
@@ -108,11 +108,12 @@ To test against a non-production API, change `url` in `mcp.json`.
 
 ## Files
 
-- `plugin.json` - Cursor plugin manifest (Agent Plugins format)
+- `plugin.json` - plugin manifest (Agent Plugins format)
+- `.cursor-plugin/plugin.json` - Cursor plugin manifest, with the logo
 - `mcp.json` - Cursor MCP server declaration
 - `.claude-plugin/plugin.json` - Claude plugin manifest
 - `.mcp.json` - Claude MCP server declaration
-- `assets/logo.png` - plugin icon (512 x 512 PNG), used for the Claude directory listing
+- `assets/logo.png` - plugin icon (512 x 512 PNG), used for the Claude directory listing and the Cursor marketplace
 - `README.md` - this file
 - `LICENSE` - MIT license text
 
