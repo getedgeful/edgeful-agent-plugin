@@ -40,15 +40,15 @@ The client discovers tools from the server when it connects. New tools and fixes
 | `save_template` | create or update a report template | yes |
 | `delete_template` | delete a template | yes |
 
-See [MCP setup](https://docs.edgeful.com/getting-started/set-up-mcp) for the current tool list and plan requirements.
+See [MCP setup](https://www.edgeful.com/docs/getting-started/set-up-mcp) for the current tool list and plan requirements.
 
 ## Writes and account changes
 
 Writes are enabled by default. In the [API dashboard](https://www.edgeful.com/api-dashboard), **let Claude write to your account** controls custom-report and settings writes. **Connected Claude** applies to OAuth connections, including this plugin; **this API key** applies to clients using that key. Turning writes off keeps read tools available.
 
-Custom-report builds and revisions use your Edgeful AI allowance. Runs execute saved code without a model call. Review the report's methodology and sample before asking your agent to save it. Saved reports appear under **my custom reports** in Edgeful AI, marked **built via API**. See [build and save a custom report](https://docs.edgeful.com/getting-started/build-custom-reports) for the workflow and limits.
+Custom-report builds and revisions use your Edgeful AI allowance. Runs execute saved code without a model call. Review the report's methodology and sample before asking your agent to save it. Saved reports appear under **my custom reports** in Edgeful AI, marked **built via API**. See [build and save a custom report](https://www.edgeful.com/docs/getting-started/build-custom-reports) for the workflow and limits.
 
-Reload the Edgeful app after changing settings through your agent. An older open tab can overwrite bookmark or watchlist changes when it next saves. Saved templates appear in their pickers after reload or the app's five-minute template refetch; select a template there to apply it. Report customizations apply to `call_report_endpoint` only when the agent passes the query returned by the customization tools. See [manage your settings](https://docs.edgeful.com/getting-started/manage-settings) for validation rules and write budgets.
+Reload the Edgeful app after changing settings through your agent. An older open tab can overwrite bookmark or watchlist changes when it next saves. Saved templates appear in their pickers after reload or the app's five-minute template refetch; select a template there to apply it. Report customizations apply to `call_report_endpoint` only when the agent passes the query returned by the customization tools. See [manage your settings](https://www.edgeful.com/docs/getting-started/manage-settings) for validation rules and write budgets.
 
 ## Install
 
