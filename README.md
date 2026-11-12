@@ -80,27 +80,17 @@ git archive -o edgeful.zip HEAD
 
 then go to **Customize > Plugins > Add > Upload plugin** and select `edgeful.zip`. `git archive` only includes committed files, so `.git` and `.DS_Store` stay out of the zip. Connect the server from the plugin's **Connectors** tab.
 
-Claude Code:
-
-```bash
-git clone https://github.com/getedgeful/edgeful-agent-plugin
-claude --plugin-dir ./edgeful-agent-plugin
-```
+Claude Code: clone this repo, then start Claude Code with `claude --plugin-dir <path-to-clone>`.
 
 Run `/mcp` inside the session and confirm `plugin:edgeful:edgeful` is listed. The first tool call opens the edgeful sign-in and consent screen.
 
-To check the manifest after editing, run `claude plugin validate ./edgeful-agent-plugin`.
+To check the manifest after editing, run `claude plugin validate <path-to-clone>`.
 
 To test against a non-production API, change `url` in `.mcp.json`.
 
 ### Cursor
 
-```bash
-git clone https://github.com/getedgeful/edgeful-agent-plugin
-cp -r edgeful-agent-plugin ~/.cursor/plugins/local/edgeful
-```
-
-Copy, don't symlink: Cursor rejects local plugins whose symlink target lives outside `~/.cursor/plugins/local` (visible in the "Cursor Plugins" output log as `loadUserLocalPlugin ... rejected`). Re-copy after editing.
+Clone this repo and copy the clone to `~/.cursor/plugins/local/edgeful`. Copy, don't symlink: Cursor rejects local plugins whose symlink target lives outside `~/.cursor/plugins/local` (visible in the "Cursor Plugins" output log as `loadUserLocalPlugin ... rejected`). Re-copy after editing.
 
 Restart Cursor (or run **Developer: Reload Window**), open **Customize** and confirm the `edgeful` plugin and its MCP server are listed. Cursor flags the server as needing authentication; click through, sign in with your edgeful account, and click **Allow**.
 
@@ -113,7 +103,7 @@ To test against a non-production API, change `url` in `mcp.json`.
 - `mcp.json` - Cursor MCP server declaration
 - `.claude-plugin/plugin.json` - Claude plugin manifest
 - `.mcp.json` - Claude MCP server declaration
-- `assets/logo.png` - plugin icon (512 x 512 PNG), used for the Claude directory listing and the Cursor marketplace
+- `assets/` - plugin icon (512 x 512 PNG), used for the Claude directory listing and the Cursor marketplace
 - `README.md` - this file
 - `LICENSE` - MIT license text
 
