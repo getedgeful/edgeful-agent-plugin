@@ -2,7 +2,7 @@
   "name": "edgeful",
   "displayName": "edgeful",
   "version": "0.1.0",
-  "description": "Query edgeful's futures and stock trading reports and discovery scans, build and save custom reports, and manage your edgeful settings, watchlists and templates from your AI agent.",
+  "description": "query edgeful's futures and stock trading reports and discovery scans, build and save custom reports, and manage your edgeful settings, watchlists and templates from your AI agent.",
   "author": {
     "name": "edgeful",
     "url": "https://www.edgeful.com"
@@ -12,5 +12,7 @@
   "license": "MIT",
   "icon": "./assets/logo.png",
   "privacyPolicyUrl": "https://www.edgeful.com/privacy-policy",
+  "termsOfServiceUrl": "https://www.edgeful.com/terms",
+  "supportUrl": "https://help.edgeful.com",
   "keywords": ["trading", "futures", "stocks", "market-data", "backtesting", "mcp"]
 }
